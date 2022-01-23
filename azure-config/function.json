@@ -1,0 +1,27 @@
+{
+  "scriptFile": "../${project.build.finalName}.jar",
+  "entryPoint": "net.moewes.azure.Function.run",
+  "bindings": [
+    {
+      "type": "httpTrigger",
+      "direction": "in",
+      "name": "req",
+      "route": "{*path}",
+      "methods": [
+        "GET",
+        "POST",
+        "HEAD",
+        "PUT",
+        "OPTIONS",
+        "DELETE"
+      ],
+      "dataType": "binary",
+      "authLevel": "ANONYMOUS"
+    },
+    {
+      "type": "http",
+      "direction": "out",
+      "name": "$return"
+    }
+  ]
+}

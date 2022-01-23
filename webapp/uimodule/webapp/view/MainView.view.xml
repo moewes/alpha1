@@ -1,0 +1,79 @@
+<mvc:View xmlns:f="sap.f"
+          controllerName="rcBerufsinfo.controller.MainView" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m">
+
+    <Page title="Club Admin" showNavButton="false" showHeader="true" showFooter="true">
+        <customHeader>
+            <f:ShellBar title="{i18n>Home}" secondTitle="{i18n>SecondaryTitle}">
+             <f:profile>
+                <f:Avatar id="userMenu" src= "sap-icon://visits" press="onUserMenu" backgroundColor="Accent1"></f:Avatar>
+             </f:profile>
+            </f:ShellBar>
+        </customHeader>
+
+        <content>
+
+            <f:GridContainer id="_IDGenGridContainer2" class="sapUiSmallMargin">
+                <f:layout>
+                    <f:GridContainerSettings id="_IDGenGridContainerSettings1" rowSize="84px"
+                                             columnSize="84px" gap="8px"/>
+                </f:layout>
+                <f:layoutXS>
+                    <f:GridContainerSettings id="_IDGenGridContainerSettings2" rowSize="70px"
+                                             columnSize="70px" gap="8px"/>
+                </f:layoutXS>
+
+
+                <GenericTile id="info11" header="Allgemeine Informationen"
+                             press=".onInfo">
+                    <layoutData>
+                        <f:GridContainerItemLayoutData id="_IDGenGridContainerItemLayoutData111" minRows="2"
+                                                       columns="2"/>
+                    </layoutData>
+                    <TileContent>
+                        <ImageContent src="sap-icon://information"/>
+                    </TileContent>
+                </GenericTile>
+                <GenericTile id="_IDGenGenericTile522"
+                             header="Überblick Berufsfelder und Termine" press=".onVeranstaltungen">
+                    <layoutData>
+                        <f:GridContainerItemLayoutData id="_IDGenGridContainerItemLayoutData522" minRows="2"
+                                                       columns="2"/>
+                    </layoutData>
+                    <TileContent>
+                        <ImageContent src="sap-icon://collaborate"/>
+                    </TileContent>
+                </GenericTile>
+                <GenericTile id="myAppointments33" header="Meine Anmeldungen"
+                             press=".onAnmeldungen">
+                    <layoutData>
+                        <f:GridContainerItemLayoutData id="_IDGenGridContainerItemLayoutData233" minRows="2"
+                                                       columns="2"/>
+                    </layoutData>
+                    <TileContent>
+                        <ImageContent src="sap-icon://activity-items"/>
+                    </TileContent>
+                </GenericTile>
+                <GenericTile id="_IDGenGenericTile444"
+                             header="Zugang für Referenten" press=".onReferenten">
+                    <layoutData>
+                        <f:GridContainerItemLayoutData id="_IDGenGridContainerItemLayoutData444" minRows="2"
+                                                       columns="2"/>
+                    </layoutData>
+                    <TileContent>
+                        <ImageContent src="sap-icon://personnel-view"/>
+                    </TileContent>
+                </GenericTile>
+            </f:GridContainer>
+        </content>
+        <footer>
+            <Toolbar>
+                <ToolbarSpacer/>
+                <Button
+                        id="helpButton"
+                        press=".onShowHelp"
+                        icon="sap-icon://sys-help"/>
+            </Toolbar>
+        </footer>
+
+    </Page>
+</mvc:View>

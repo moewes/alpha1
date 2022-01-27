@@ -20,16 +20,19 @@ sap.ui.define([
                 var userMenu = this.getView().byId("userMenu");
                 var referentenTile = this.getView().byId("_IDGenGenericTile444");
 
-                console.log("Cookie " + this.getCookieData("token"));
                 if (this.getCookieData("token") != false) {
                     tile.setVisible(true);
                     userMenu.setVisible(true);
+                    referentenTile.setVisible(false);
+                } else if (this.getCookieData("referent") != false) {
+                    referentenTile.setVisible(true);
+                    userMenu.setVisible(true);
+                    tile.setVisible(false);
                 } else {
                     tile.setVisible(false);
                     userMenu.setVisible(false);
+                    referentenTile.setVisible(false);
                 }
-                referentenTile.setVisible(false);
-
             },
             onBerufsfelder: function () {
                 this.getRouter().navTo("berufsfelder", {}, false);
@@ -44,28 +47,29 @@ sap.ui.define([
                 console.log("Anmeldungen");
                 var token = this.getCookieData("token");
                 console.log("Token " + token);
-                this.getRouter().navTo("anmeldungen", {id: token}, false);
+                this.getRouter().navTo("anmeldungen", { id: token }, false);
             },
             onVeranstaltungen: function () {
                 this.getRouter().navTo("veranstaltungen", {}, false);
             },
             onReferenten: function () {
-                this.getRouter().navTo("referenten", {}, false);
+                var token = this.getCookieData("referent");
+                console.log("Token " + token);
+                this.getRouter().navTo("referenten", { id: token}, false);
             },
             onInfo: function () {
                 this.getRouter().navTo("info", {}, false);
             },
-            getCookieData: function (name) {
-                var pairs = document.cookie.split("; "),
-                    count = pairs.length, parts;
-                while (count--) {
-                    parts = pairs[count].split("=");
-                    if (parts[0] === name)
-                        return parts[1];
-                }
-                return false;
-            },
+
             onUserMenu: function (oEvent) {
+
+                var logoutfkt;
+                if (this.getCookieData("referent") != false) {
+                    logoutfkt = this.onLogoutReferent;
+                } else {
+                    logoutfkt = this.onLogout;
+                }
+
                 var oPopover = new Popover({
                     showHeader: false,
                     placement: PlacementType.Bottom,
@@ -77,16 +81,19 @@ sap.ui.define([
                         new Button({
                             text: 'Logout',
                             type: ButtonType.Transparent,
-                            press: this.onLogout
+                            press: logoutfkt
                         })
                     ]
                 }).addStyleClass('sapMOTAPopover sapTntToolHeaderPopover');
 
                 oPopover.openBy(oEvent.getSource());
             },
-            onLogout: function () {
-                sap.m.URLHelper.redirect("/logout", false);
-            }
+            onLogout: function (oEvent) {
 
+                sap.m.URLHelper.redirect("/logout", false);
+            },
+            onLogoutReferent: function (oEvent) {
+                sap.m.URLHelper.redirect("/logoutReferent", false);
+            }
         });
     });

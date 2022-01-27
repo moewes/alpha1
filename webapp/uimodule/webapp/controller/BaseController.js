@@ -69,6 +69,16 @@ sap.ui.define(
                 } else {
                     this.getRouter().navTo("appHome", {}, true /*no history*/);
                 }
+            },
+            getCookieData: function (name) {
+                var pairs = document.cookie.split("; "),
+                    count = pairs.length, parts;
+                while (count--) {
+                    parts = pairs[count].split("=");
+                    if (parts[0] === name)
+                        return parts[1];
+                }
+                return false;
             }
         });
     }

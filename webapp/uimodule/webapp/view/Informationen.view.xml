@@ -2,11 +2,7 @@
 	<Page title="Referenten pflegen" showNavButton="false" showHeader="true" showFooter="true">
 		<customHeader>
 			<f:ShellBar title="{i18n>Home}" secondTitle="{i18n>SecondaryTitle}" showNavButton="true" navButtonPressed=".onNavBack">
-				<f:menu>
-					<Menu>
-						<MenuItem text="Home" press=".onNavBack" icon="sap-icon://home" />
-					</Menu>
-				</f:menu>
+			
 			</f:ShellBar>
 		</customHeader>
 		<content>

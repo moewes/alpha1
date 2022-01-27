@@ -1,21 +1,21 @@
 <mvc:View xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout" xmlns:f="sap.f"
           controllerName="rcBerufsinfo.controller.VeranstaltungenView" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m">
 
-    <Page title="Berufsinformation 2022" showNavButton="true" showHeader="true" showFooter="true">
+    <Page id="_IDGenPage1" title="Berufsinformation 2022" showNavButton="true" showHeader="true" showFooter="true">
         <customHeader>
-            <f:ShellBar title="{i18n>Home}" secondTitle="{i18n>SecondaryTitle}" showNavButton="true"
+            <f:ShellBar id="_IDGenShellBar1" title="{i18n>Home}" secondTitle="{i18n>SecondaryTitle}" showNavButton="true"
                         navButtonPressed=".onNavBack">
             </f:ShellBar>
         </customHeader>
         <content>
-            <layout:VerticalLayout class="sapUiContentPadding">
+            <layout:VerticalLayout id="_IDGenVerticalLayout1" class="sapUiContentPadding">
 
                 <Table id="veranstaltungenList" headerText="Veranstaltungen" items="{/Veranstaltungen}"
                        itemPress=".onDetail" enableBusyIndicator="true" >
                     <headerToolbar>
-                        <OverflowToolbar>
+                        <OverflowToolbar id="_IDGenOverflowToolbar1">
                             <content>
-                                <ToolbarSpacer/>
+                                <ToolbarSpacer id="_IDGenToolbarSpacer1"/>
                                 <SearchField id="searchField" width="20%" placeholder="{i18n>searchFieldPlaceholder}"
                                              enabled="{= !${appView>/hasUIChanges}}" search=".onSearch"/>
                                 
@@ -37,24 +37,28 @@
                     -->
                        
                         <Column id="dateColumn">
-                            <Text text="Datum"/>
+                            <Text id="_IDGenText1" text="Datum"/>
                         </Column>
                         <Column id="timeColumn">
-                            <Text text="Uhrzeit"/>
+                            <Text id="_IDGenText2" text="Uhrzeit"/>
                         </Column>
                         <Column id="berufsfeldColumn">
-                            <Text text="Berufsfeld"/>
+                            <Text id="_IDGenText3" text="Berufsfeld"/>
+                        </Column>
+                        <Column id="berufsfeldColumn2">
+                            <Text id="_IDGenText32" text="Referent"/>
                         </Column>
                        
                     </columns>
                     <items>
-                        <ColumnListItem type="Active">
+                        <ColumnListItem id="_IDGenColumnListItem1" type="Active">
                             <cells>
                                <!-- <Text text="{Id}"/> -->
                               <!--  <Text text="{Beschreibung}"/> -->
-                                <Text text="{Datum}" />
-                                <Text text="{Zeit}" />
-                                <Text text="{Berufsfeld}" />
+                                <Text id="_IDGenText4" text="{Datum}" />
+                                <Text id="_IDGenText5" text="{Zeit}" />
+                                <Text id="_IDGenText6" text="{Berufsfeld}" />
+                                <Text id="_IDGenText7" text="{Referent}" />
                               <!--  <Text text="{Referent}"/> -->
                             </cells>
                         </ColumnListItem>
@@ -63,8 +67,8 @@
             </layout:VerticalLayout>
         </content>
         <footer>
-            <Toolbar visible="{appView>/hasUIChanges}">
-                <ToolbarSpacer/>
+            <Toolbar id="_IDGenToolbar1" visible="{appView>/hasUIChanges}">
+                <ToolbarSpacer id="_IDGenToolbarSpacer2"/>
                 <Button id="helpButton" press=".onShowHelp" icon="sap-icon://sys-help"/>
             </Toolbar>
         </footer>

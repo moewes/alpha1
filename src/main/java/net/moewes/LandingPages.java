@@ -22,4 +22,18 @@ public class LandingPages {
         ex.context().removeCookie("token");
         ex.context().redirect("/");
     }
+
+    @Route(path = "/referent")
+    void loginReferent(RoutingExchange ex) {
+        ex.getParam("token").ifPresent(token -> {
+            ex.context().addCookie(Cookie.cookie("referent", token));
+        });
+        ex.context().redirect("/");
+    }
+
+    @Route(path = "/logoutReferent")
+    void logoutReferent(RoutingExchange ex) {
+        ex.context().removeCookie("referent");
+        ex.context().redirect("/");
+    }
 }

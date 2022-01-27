@@ -12,6 +12,7 @@ import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import java.net.URISyntaxException;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
 
@@ -34,14 +35,18 @@ public class VeranstaltungRepository {
     @SneakyThrows
     public List<OdataVeranstaltung> getAll() {
 
+        List<OdataVeranstaltung> result = new ArrayList<>();
+
         List<Veranstaltung> veranstaltungList = veranstaltungDao.getAll();
 
-        List<OdataVeranstaltung> result = new ArrayList<>();
+        veranstaltungList.sort(Comparator.comparing(Veranstaltung::getDatum)
+                .thenComparing(Veranstaltung::getZeit));
+
         veranstaltungList.forEach(veranstaltung -> {
             OdataVeranstaltung resultItem = new OdataVeranstaltung();
             resultItem.setId(veranstaltung.getRowKey());
-            resultItem.setDatum(veranstaltung.getDatum());
-            resultItem.setZeit(veranstaltung.getZeit());
+            resultItem.setDatum(formatDate(veranstaltung.getDatum()));
+            resultItem.setZeit(formatZeit(veranstaltung.getZeit()));
             resultItem.setBeschreibung(veranstaltung.getBeschreibung());
             resultItem.setBerufsfeld(getBerufsfeldName(veranstaltung.getBerufsfeld()));
             resultItem.setReferent(getReferentName(veranstaltung.getReferent()));
@@ -51,6 +56,15 @@ public class VeranstaltungRepository {
         return result;
     }
 
+    private String formatZeit(String zeit) {
+        return zeit.substring(0, 5);
+    }
+
+    private String formatDate(String datum) {
+        String[] parts = datum.split("-");
+        return parts[2] + "." + parts[1] + "." + parts[0];
+    }
+
     @SneakyThrows
     public Optional<OdataVeranstaltung> find(String id) {
 
@@ -58,8 +72,8 @@ public class VeranstaltungRepository {
         if (veranstaltung != null) {
             OdataVeranstaltung resultItem = new OdataVeranstaltung();
             resultItem.setId(veranstaltung.getRowKey());
-            resultItem.setDatum(veranstaltung.getDatum());
-            resultItem.setZeit(veranstaltung.getZeit());
+            resultItem.setDatum(formatDate(veranstaltung.getDatum()));
+            resultItem.setZeit(formatZeit(veranstaltung.getZeit()));
             resultItem.setBeschreibung(veranstaltung.getBeschreibung());
             resultItem.setBerufsfeld(getBerufsfeldName(veranstaltung.getBerufsfeld()));
             resultItem.setReferent(getReferentName(veranstaltung.getReferent()));

@@ -11,9 +11,8 @@ public class LandingPages {
 
     @Route(path = "/login")
     void loginRoute(RoutingExchange ex) {
-        ex.getParam("token").ifPresent(token -> {
-            ex.context().addCookie(Cookie.cookie("token", token));
-        });
+        ex.getParam("token")
+                .ifPresent(token -> ex.context().addCookie(Cookie.cookie("token", token)));
         ex.context().redirect("/");
     }
 
@@ -25,9 +24,8 @@ public class LandingPages {
 
     @Route(path = "/referent")
     void loginReferent(RoutingExchange ex) {
-        ex.getParam("token").ifPresent(token -> {
-            ex.context().addCookie(Cookie.cookie("referent", token));
-        });
+        ex.getParam("token")
+                .ifPresent(token -> ex.context().addCookie(Cookie.cookie("referent", token)));
         ex.context().redirect("/");
     }
 

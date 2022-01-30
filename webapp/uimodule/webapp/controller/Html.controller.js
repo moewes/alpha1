@@ -22,7 +22,7 @@ sap.ui.define([
 					"<div style='width=100%'><div style=\"padding:10px\">" +
 					"<h1>Hintergrund</h1>" +
 					"<p>Seit vielen Jahren schon führt der Rotary Club Eutin im Februar einen Berufsinformationsabend für die Schülerinnen und Schüler " +
-					" der eutiner Gymnasien durch. Seit einigen Jahren ist auch der Rotary Club Neustadt und das neustädter Gymnansium dabei.</p>" +
+					" der Eutiner Gymnasien durch. Seit einigen Jahren ist auch der Rotary Club Neustadt und das Neustädter Gymnansium dabei.</p>" +
 					"<p>Bei diesem Berufsinformationsabenden geht es nicht um eine Berufs- oder Studienberatung im klassischen Sinne, sondern darum jungen Menschen, die " +
 					" vor der Entscheidung stehen, sich für eine Berufsausbildung oder ein Studium zu entscheiden, die Möglichkeit zu geben mit Frauen und Männern ins " +
 					" Gespräch zu kommen, die in diesen Berufsfeldern tätig sind oder dies waren. Persönliche Erfahrungen und Einblicke aus der Praxis können so im Gespräch"

@@ -79,6 +79,9 @@ sap.ui.define(
                         return parts[1];
                 }
                 return false;
+            },
+            deleteCookie: function (name) {
+                document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
             }
         });
     }

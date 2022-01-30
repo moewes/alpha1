@@ -97,13 +97,18 @@
         },
         {
           "name": "anmeldungen",
-          "pattern": "anmeldungen",
+          "pattern": "anmeldungen/{id}",
           "target": "anmeldungen"
         },
         {
-          "name": "berufsfelder",
-          "pattern": "berufsfelder",
-          "target": "berufsfelder"
+          "name": "referenten",
+          "pattern": "referenten/{id}",
+          "target": "referenten"
+        },
+        {
+          "name": "referentenAnmeldungen",
+          "pattern": "referenten/anmeldungen/{id}",
+          "target": "referentenAnmeldungen"
         },
         {
           "name": "info",
@@ -147,9 +152,14 @@
           "viewName": "Veranstaltung",
           "transition": "fade"
         },
-        "berufsfelder": {
-          "viewId": "berufsfelder",
-          "viewName": "Berufsfelder",
+        "referenten": {
+          "viewId": "referenten",
+          "viewName": "Referenten",
+          "transition": "fade"
+        },
+        "referentenAnmeldungen": {
+          "viewId": "referentenAnmeldungen",
+          "viewName": "ReferentenAnmeldungen",
           "transition": "fade"
         }
       }

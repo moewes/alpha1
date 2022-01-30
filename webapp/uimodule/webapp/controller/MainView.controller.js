@@ -89,10 +89,11 @@ sap.ui.define([
                 oPopover.openBy(oEvent.getSource());
             },
             onLogout: function (oEvent) {
-
+                document.cookie = 'token=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
                 sap.m.URLHelper.redirect("/logout", false);
             },
             onLogoutReferent: function (oEvent) {
+                document.cookie = 'referent=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
                 sap.m.URLHelper.redirect("/logoutReferent", false);
             }
         });

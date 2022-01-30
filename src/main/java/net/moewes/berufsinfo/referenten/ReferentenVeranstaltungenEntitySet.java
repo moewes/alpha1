@@ -43,7 +43,7 @@ public class ReferentenVeranstaltungenEntitySet
 
             for (Anmeldung anmeldung : queryResult) {
                 ReferentenAnmeldungOdata data = new ReferentenAnmeldungOdata();
-                data.setId(anmeldung.getPartitionKey());
+                data.setId(anmeldung.getRowKey());
                 data.setEmail(anmeldung.getRowKey());
 
                 Teilnehmer teilnehmer = teilnehmerDao.get("Berufsinfo", anmeldung.getRowKey());

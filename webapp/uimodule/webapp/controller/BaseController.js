@@ -43,6 +43,7 @@ sap.ui.define(
              * @returns {sap.ui.model.resource.ResourceModel} the resourceModel of the component
              */
             getResourceBundle: function () {
+                // @ts-ignore
                 return this.getOwnerComponent().getModel("i18n").getResourceBundle();
             },
 
@@ -54,6 +55,7 @@ sap.ui.define(
              * @param {boolean} pbReplace? Defines if the hash should be replaced (no browser history entry) or set (browser history entry)
              */
             navTo: function (psTarget, pmParameters, pbReplace) {
+                // @ts-ignore
                 this.getRouter().navTo(psTarget, pmParameters, pbReplace);
             },
 
@@ -67,6 +69,7 @@ sap.ui.define(
                 if (sPreviousHash !== undefined) {
                     window.history.back();
                 } else {
+                    // @ts-ignore
                     this.getRouter().navTo("appHome", {}, true /*no history*/);
                 }
             },

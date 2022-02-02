@@ -1,53 +1,53 @@
 <mvc:View xmlns:f2="sap.f" controllerName="rcBerufsinfo.controller.VeranstaltungView" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:f="sap.ui.layout.form" busyIndicatorDelay="0">
     <Page id="employeePage" title="" showNavButton="true" navButtonPress=".onNavBack" class="sapUiResponsiveContentPadding">
         <customHeader>
-            <f2:ShellBar title="{i18n>Home}" secondTitle="{i18n>SecondaryTitle}" showNavButton="true" navButtonPressed=".onNavBack"></f2:ShellBar>
+            <f2:ShellBar id="_IDGenShellBar1" title="{i18n>Home}" secondTitle="{i18n>SecondaryTitle}" showNavButton="true" navButtonPressed=".onNavBack"></f2:ShellBar>
         </customHeader>
         <content>
-            <ObjectHeader title="{Berufsfeld}" backgroundDesign="Solid" condensed="true">
+            <ObjectHeader id="_IDGenObjectHeader1" title="{Berufsfeld}" backgroundDesign="Solid" condensed="true">
                 <statuses>
-                    <ObjectStatus title="Status" text="für Anmeldungen offen" state="Success" />
+                    <ObjectStatus id="_IDGenObjectStatus1" title="Status" text="für Anmeldungen offen" state="Success" />
                 </statuses>
             </ObjectHeader>
 
-            <f:SimpleForm minWidth="1024" editable="true" layout="ResponsiveGridLayout" labelSpanL="3" labelSpanM="3" emptySpanL="4" emptySpanM="4" columnsL="1" columnsM="1">
+            <f:SimpleForm id="_IDGenSimpleForm1" minWidth="1024" editable="true" layout="ResponsiveGridLayout" labelSpanL="3" labelSpanM="3" emptySpanL="4" emptySpanM="4" columnsL="1" columnsM="1">
                 <f:content>
                     <!-- <Label text="{i18n>fieldId}"/>
                              <Text text="{Id}"/> -->
-                    <Label text="{i18n>fieldDatum}" />
-                    <Text text="{Datum}" ></Text>
-                    <Label text="{i18n>fieldZeit}" />
-                    <Text text="{Zeit}" ></Text>
-                    <Label text="{i18n>fieldBerufsfeld}" />
-                    <Text text="{Berufsfeld}" />
-                    <Label text="{i18n>fieldReferent}" />
-                    <Text text="{Referent}" />
-                    <Label text="{i18n>fieldBeschreibung}" />
-                    <Text text="{Beschreibung}" wrapping="true" />
+                    <Label id="_IDGenLabel1" text="{i18n>fieldDatum}" />
+                    <Text id="_IDGenText1" text="{Datum}" ></Text>
+                    <Label id="_IDGenLabel2" text="{i18n>fieldZeit}" />
+                    <Text id="_IDGenText2" text="{Zeit}" ></Text>
+                    <Label id="_IDGenLabel3" text="{i18n>fieldBerufsfeld}" />
+                    <Text id="_IDGenText3" text="{Berufsfeld}" />
+                    <Label id="_IDGenLabel4" text="{i18n>fieldReferent}" />
+                    <Text id="_IDGenText4" text="{Referent}" />
+                    <Label id="_IDGenLabel5" text="{i18n>fieldBeschreibung}" />
+                    <Text id="_IDGenText5" text="{Beschreibung}" wrapping="true" />
                 </f:content>
             </f:SimpleForm>
 
-            <f:SimpleForm minWidth="1024" editable="true" layout="ResponsiveGridLayout" labelSpanL="3" labelSpanM="3" emptySpanL="4" emptySpanM="4" columnsL="1" columnsM="1">
-                <Title text="Zu dieser Veranstaltug anmelden:"></Title>
+            <f:SimpleForm id="_IDGenSimpleForm2" minWidth="1024" editable="true" layout="ResponsiveGridLayout" labelSpanL="3" labelSpanM="3" emptySpanL="4" emptySpanM="4" columnsL="1" columnsM="1">
+                <Title id="_IDGenTitle1" text="Zu dieser Veranstaltug anmelden:"></Title>
                 <f:content>
                     <!-- <Label text="{i18n>fieldId}"/>
                              <Text text="{Id}"/> -->
-                    <Label text="Name" />
+                    <Label id="_IDGenLabel6" text="Name" />
                     <Input id="name" value="" />
-                    <Label text="Email" />
+                    <Label id="_IDGenLabel7" text="Email" />
                     <Input id="email" value="" type="Email" />
-                    <Label text="" />
+                    <Label id="_IDGenLabel8" text="" />
                     <CheckBox id="agreement" wrapping="true" text="Ich bin mit der Speicherung meines Namens und meiner Emailadresse zum Zweck der Organisations der Berufinformation einverstanden. "></CheckBox>
-                    <Label text="" />
+                    <Label id="_IDGenLabel9" text="" />
                     <CheckBox id="roboter" text="Ich bin kein Roboter"></CheckBox>
-                    <Button text="Anmelden" press="onAnmelden"></Button>
+                    <Button id="_IDGenButton1" text="Anmelden" press="onAnmelden"></Button>
                 </f:content>
             </f:SimpleForm>
 
         </content>
         <footer>
-            <Toolbar visible="{appView>/hasUIChanges}">
-                <ToolbarSpacer />
+            <Toolbar id="_IDGenToolbar1" visible="{appView>/hasUIChanges}">
+                <ToolbarSpacer id="_IDGenToolbarSpacer1" />
                 <Button id="helpButton" press=".onShowHelp" icon="sap-icon://sys-help" />
             </Toolbar>
         </footer>

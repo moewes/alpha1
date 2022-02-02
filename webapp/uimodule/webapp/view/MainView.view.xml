@@ -1,9 +1,9 @@
 <mvc:View xmlns:f="sap.f"
           controllerName="rcBerufsinfo.controller.MainView" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m">
 
-    <Page title="Club Admin" showNavButton="false" showHeader="true" showFooter="true">
+    <Page id="_IDGenPage1" title="Club Admin" showNavButton="false" showHeader="true" showFooter="true">
         <customHeader>
-            <f:ShellBar title="{i18n>Home}" secondTitle="{i18n>SecondaryTitle}">
+            <f:ShellBar id="_IDGenShellBar1" title="{i18n>Home}" secondTitle="{i18n>SecondaryTitle}">
              <f:profile>
                 <f:Avatar id="userMenu" src= "sap-icon://visits" press="onUserMenu" backgroundColor="Accent1"></f:Avatar>
              </f:profile>
@@ -29,8 +29,8 @@
                         <f:GridContainerItemLayoutData id="_IDGenGridContainerItemLayoutData111" minRows="2"
                                                        columns="2"/>
                     </layoutData>
-                    <TileContent>
-                        <ImageContent src="sap-icon://information"/>
+                    <TileContent id="_IDGenTileContent1">
+                        <ImageContent id="_IDGenImageContent1" src="sap-icon://information"/>
                     </TileContent>
                 </GenericTile>
                 <GenericTile id="_IDGenGenericTile522"
@@ -39,8 +39,8 @@
                         <f:GridContainerItemLayoutData id="_IDGenGridContainerItemLayoutData522" minRows="2"
                                                        columns="2"/>
                     </layoutData>
-                    <TileContent>
-                        <ImageContent src="sap-icon://collaborate"/>
+                    <TileContent id="_IDGenTileContent2">
+                        <ImageContent id="_IDGenImageContent2" src="sap-icon://collaborate"/>
                     </TileContent>
                 </GenericTile>
                 <GenericTile id="myAppointments33" header="Meine Anmeldungen"
@@ -49,8 +49,8 @@
                         <f:GridContainerItemLayoutData id="_IDGenGridContainerItemLayoutData233" minRows="2"
                                                        columns="2"/>
                     </layoutData>
-                    <TileContent>
-                        <ImageContent src="sap-icon://activity-items"/>
+                    <TileContent id="_IDGenTileContent3">
+                        <ImageContent id="_IDGenImageContent3" src="sap-icon://activity-items"/>
                     </TileContent>
                 </GenericTile>
                 <GenericTile id="_IDGenGenericTile444"
@@ -59,15 +59,15 @@
                         <f:GridContainerItemLayoutData id="_IDGenGridContainerItemLayoutData444" minRows="2"
                                                        columns="2"/>
                     </layoutData>
-                    <TileContent>
-                        <ImageContent src="sap-icon://personnel-view"/>
+                    <TileContent id="_IDGenTileContent4">
+                        <ImageContent id="_IDGenImageContent4" src="sap-icon://personnel-view"/>
                     </TileContent>
                 </GenericTile>
             </f:GridContainer>
         </content>
         <footer>
-            <Toolbar>
-                <ToolbarSpacer/>
+            <Toolbar id="_IDGenToolbar1">
+                <ToolbarSpacer id="_IDGenToolbarSpacer1"/>
                 <Button
                         id="helpButton"
                         press=".onShowHelp"

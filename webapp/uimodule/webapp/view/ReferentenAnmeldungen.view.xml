@@ -1,0 +1,38 @@
+<mvc:View xmlns:layout="sap.ui.layout" xmlns:f="sap.f" controllerName="rcBerufsinfo.controller.ReferentenAnmeldungenView" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m">
+
+    <Page id="_IDGenPage1" title="Referenten pflegen" showNavButton="false" showHeader="true" showFooter="true">
+        <customHeader>
+            <f:ShellBar id="_IDGenShellBar1" title="{i18n>home}" secondTitle="{i18n>SecondaryTitle}" showNavButton="true" navButtonPressed=".onNavBack"></f:ShellBar>
+        </customHeader>
+        <content>
+            <ObjectHeader id="_IDGenObjectHeader1" title="Veranstaltung: {Berufsfeld} am {Datum} um {Zeit}" backgroundDesign="Solid" condensed="true"></ObjectHeader>
+            <Table id="veranstaltungenListe" items="{path: 'ReferentenAnmeldungen',
+                            parameters: {
+                                $$ownRequest: true
+                            }}">
+                <columns>
+                    <Column id="_IDGenColumn1">
+                        <Text id="_IDGenText1" text="Name"></Text>
+                    </Column>
+                    <Column id="_IDGenColumn2">
+                        <Text id="_IDGenText2" text="Email"></Text>
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem id="_IDGenColumnListItem1" type="Active">
+                        <cells>
+                            <Text id="_IDGenText4" text="{Name}"></Text>
+                            <Text id="_IDGenText5" text="{Email}"></Text>
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </content>
+        <footer>
+            <Toolbar id="_IDGenToolbar1" visible="{appView>/hasUIChanges}">
+                <ToolbarSpacer id="_IDGenToolbarSpacer1" />
+                <Button id="helpButton" press=".onShowHelp" icon="sap-icon://sys-help" />
+            </Toolbar>
+        </footer>
+    </Page>
+</mvc:View>

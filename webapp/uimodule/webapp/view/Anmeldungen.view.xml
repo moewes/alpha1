@@ -1,0 +1,49 @@
+<mvc:View xmlns:uxap="sap.uxap" xmlns:semantic="sap.f.semantic" xmlns:form="sap.ui.layout.form" xmlns:layout="sap.ui.layout" xmlns:f="sap.f" controllerName="rcBerufsinfo.controller.AnmeldungenView" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m">
+
+    <Page id="_IDGenPage1" title="Referenten pflegen" showNavButton="false" showHeader="true" showFooter="true" class="sapUiResponsiveContentPadding">
+        <customHeader>
+            <f:ShellBar id="_IDGenShellBar1" title="{i18n>Home}" secondTitle="{i18n>SecondaryTitle}" showNavButton="true" navButtonPressed=".onNavBack"></f:ShellBar>
+        </customHeader>
+        <content>
+            <ObjectHeader id="_IDGenObjectHeader1" title="Anmeldungen {Name}" backgroundDesign="Solid" condensed="true"></ObjectHeader>
+
+
+            <!--List id="anmeldungenListe" items="{path: 'Anmeldungen',
+                            parameters: {
+                                $$ownRequest: true
+                            }}"
+                            >
+                          
+                            
+                                <StandardListItem  title="{Veranstaltung}" >
+                                    
+                                </StandardListItem>
+                           
+                        </List-->
+            <Table id="anmeldungenListe2" items="{path: 'Anmeldungen',
+                            parameters: {
+                                $$ownRequest: true
+                            }}">
+                <columns>
+                    <Column id="veranstaltungColumn">
+                        <Text id="_IDGenText2" text="Veranstaltung"></Text>
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem id="_IDGenColumnListItem1">
+                        <cells>
+                            <Text id="_IDGenText1" text="{Veranstaltung}"></Text>
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+
+        </content>
+        <footer>
+            <Toolbar id="_IDGenToolbar1">
+                <ToolbarSpacer id="_IDGenToolbarSpacer1" />
+                <Button id="helpButton" press=".onShowHelp" icon="sap-icon://sys-help" />
+            </Toolbar>
+        </footer>
+    </Page>
+</mvc:View>

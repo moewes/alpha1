@@ -122,7 +122,7 @@ public class RegisterService {
         String link = service_url +
                 "/login?token=" + teilnehmer.getToken();
 
-        String messageText = "Lieber " + teilnehmer.getName()
+        String messageText = "Hallo " + teilnehmer.getName()
                 + ",<br/><br/> vielen Dank für Ihr Interesse! Ihre Anmeldung zur Veranstaltung am "
                 + datum + " um " + uhrzeit + " Berufsfeld " + berufsfeld + " ist gespeichert. <br/>" +
                 "Sie erhalten rechtzeitig vor dem Termin eine weitere Mail mit den Zugangsdaten zum Online Meeting. <br/>" +

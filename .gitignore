@@ -3,3 +3,4 @@
 *.iml
 /webapp/node_modules
 /webapp/uimodule/dist
+/local

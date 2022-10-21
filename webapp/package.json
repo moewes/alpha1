@@ -15,7 +15,7 @@
   "devDependencies": {
     "@sap/eslint-plugin-ui5-jsdocs": "^2.0.5",
     "@sapui5/ts-types": "^1.104.0",
-    "@ui5/cli": "^2.14.9",
+    "@ui5/cli": "^2.14.13",
     "eslint": "^8.23.0",
     "karma": "^6.3.16",
     "karma-chrome-launcher": "^3.1.0",
